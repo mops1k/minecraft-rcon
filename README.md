@@ -1,3 +1,13 @@
+#Minecraft Rcon Library
+
+Minecraft Rcon, library to make rcon requests and get response back.
+
+### Installation
+```
+composer require mops1k/minecraft-rcon
+```
+###Example of usage
+```php
 <?php
 /**
  * Example of using
@@ -19,3 +29,5 @@ $rcon
 $rcon->sendCommand('time set 12');
 
 echo($rcon->getResponse(Rcon::RESPONSE_FORMATTED));
+
+```
