@@ -1,0 +1,25 @@
+{
+  "name" : "mops1k/minecraft-rcon",
+  "type" : "library",
+  "description" : "Minecraft rcon request library",
+  "keywords" : [
+    "minecraft",
+    "server",
+    "rcon"
+  ],
+  "license" : "BSD",
+  "autoload" : {
+    "psr-4" : {
+      "MinecraftRcon\\" : "src/"
+    }
+  },
+  "authors" : [
+    {
+      "name" : "mops1k",
+      "email" : "bednyj.mops@gmail.com"
+    }
+  ],
+  "requirements": {
+    "php": ">=5.5"
+  }
+}
