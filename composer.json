@@ -7,7 +7,7 @@
     "server",
     "rcon"
   ],
-  "license" : "BSD",
+  "license" : "MIT",
   "autoload" : {
     "psr-4" : {
       "MinecraftRcon\\" : "src/"
