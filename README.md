@@ -1,33 +1,29 @@
-#Minecraft Rcon Library
+# Minecraft Rcon Library
 
-Minecraft Rcon, library to make rcon requests and get response back.
+Simple Minecraft Rcon library to make rcon requests and get response back.
 
 ### Installation
-```
+```shell
 composer require mops1k/minecraft-rcon
 ```
-###Example of usage
+
+### Example of usage
 ```php
 <?php
-/**
- * Example of using
- */
 use MinecraftRcon\Rcon;
+use MinecraftRcon\RconExceptionInterface;
 
 require_once 'vendor/autoload.php';
 
-// Connect to server
-$rcon = new Rcon();
-$rcon
-    ->setHost('localhost')
-    ->setPort(25575)
-    ->setPassword('password')
-    ->connect()
-;
+try {
+    $rcon = new Rcon(
+        'localhost',
+        25575,
+        'password'
+    );
 
-// Send command
-$rcon->sendCommand('time set 12');
-
-echo($rcon->getResponse(Rcon::RESPONSE_FORMATTED));
-
+    echo $rcon->send('time set 12')->getResponse(Rcon::RESPONSE_FORMATTED);
+} catch (RconExceptionInterface $rconException) {
+    echo $rconException->getMessage();
+}
 ```
